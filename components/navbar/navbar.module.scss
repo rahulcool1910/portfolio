@@ -1,0 +1,93 @@
+@import '../../styles/variables.scss';
+
+.link {
+   &_container{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+   }
+  &_sub_container {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+  }
+  font-size: 1rem;
+  color: $tertiary_grey;
+  padding: 7px 0px;
+  width: 200px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 600;
+  transition: all 1s;
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.09);
+  &::before,
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: $primary_green;
+  }
+  & span::before,
+  & span::after {
+    content: '';
+    width: 2px;
+    height: 0;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: $primary_green;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+  }
+  &:hover span::before,
+  &:hover span::after {
+    height: 100%;
+  }
+  &::before,
+  &::after {
+    transition-delay: 0s;
+  }
+  & span::before,
+  & span::after {
+    transition-delay: 0.2s;
+  }
+  &::before {
+    right: 0;
+    top: 0;
+  }
+  &::after {
+    left: 0;
+    bottom: 0;
+  }
+  & span::before {
+    left: 0;
+    top: 0;
+  }
+  & span::after {
+    right: 0;
+    bottom: 0;
+  }
+  &:hover::before,
+  &:hover::after {
+    transition-delay: 0.2s;
+  }
+  &:hover span::before,
+  &:hover span::after {
+    transition-delay: 0s;
+  }
+  &:hover span {
+    color: $primary_green;
+    transition-delay: 0.2s;
+  }
+}
