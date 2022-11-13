@@ -35,9 +35,29 @@
       }
     }
   }
-  &_details{
-    width:90%;
+  &_details {
+    width: 90%;
     margin-top: 50px;
+    &_controller {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 100px;
+      &_button {
+        border: 1px solid $tertiary_grey;
+        border-radius: 100px;
+        padding:1rem;
+        & svg {
+          font-size: 2rem;
+          fill: $tertiary_green;
+        }
+        // background-color: $primary_green;
+      }
+    }
+    &_progressbar {
+      width: 50%;
+    }
   }
   &_detail {
     display: flex;
