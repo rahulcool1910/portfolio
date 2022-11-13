@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import ContactMe from '../components/contactMe/contactMe';
 import Hero from '../components/home/hero';
 import Navbar from '../components/navbar/navbar';
 import Projects from '../components/projects/project';
@@ -9,9 +10,10 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container_subContainer}>
-        <Navbar />
+        {/* <Navbar />
         <Hero />
-        <Projects />
+        <Projects /> */}
+        <ContactMe />
       </div>
     </div>
   );
