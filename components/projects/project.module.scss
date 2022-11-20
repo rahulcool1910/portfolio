@@ -20,6 +20,7 @@
       font-size: 3.5rem;
       font-family: 'Orbitron', sans-serif;
       line-height: 4rem;
+      text-transform: capitalize;
     }
     & span {
       color: $tertiary_grey;
@@ -47,7 +48,7 @@
       &_button {
         border: 1px solid $tertiary_grey;
         border-radius: 100px;
-        padding:1rem;
+        padding: 1rem;
         & svg {
           font-size: 2rem;
           fill: $tertiary_green;
@@ -82,11 +83,14 @@
       color: $tertiary_grey;
       padding: 10px;
     }
-    &_title {
+    &_title a {
       color: $primary_green;
       font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
       padding-left: 2rem;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &_description {
       padding-left: 2rem;

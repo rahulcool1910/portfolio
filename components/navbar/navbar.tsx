@@ -2,7 +2,7 @@ import React from 'react';
 import { ILinks } from '../../constants/types/Links';
 import styles from './navbar.module.scss';
 import Image from 'next/image';
-import Illustrations from '../../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 const Navbar: React.FC = () => {
   const links: ILinks[] = [
     {
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             </div>
           ))}
       </div>
-      <Image src={Illustrations} alt={''} />
+      <Image src={logo} alt={''} className={styles.logo} />
       <div className={styles.link_sub_container}>
         {links
           .filter((links, gIndex) => gIndex >= 2)

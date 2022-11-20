@@ -10,9 +10,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container_subContainer}>
-        {/* <Navbar />
+        <Navbar />
         <Hero />
-        <Projects /> */}
+        <Projects />
         <ContactMe />
       </div>
     </div>

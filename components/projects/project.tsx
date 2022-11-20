@@ -11,6 +11,7 @@ import { Swiper as SwiperClass } from 'swiper/types';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 import CodeEditor from '../codeEditore/codeEditor';
+import PathFinder from '../pathfinder/pathfinder';
 const Projects: React.FC = () => {
   const [projectProgress, setProjectProgress] = useState(0);
   const swiperRef = useRef<SwiperClass>();
@@ -20,22 +21,22 @@ const Projects: React.FC = () => {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
       link: 'https://rahulcool1910.github.io/codeEditor/',
-      imageSrc: codeEditor,
+      imageSrc: CodeEditor,
     },
     {
       title: 'Pathfinder',
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
       link: 'https://rahulcool1910.github.io/pathfinding-visulaizer/',
-      imageSrc: codeEditor,
+      imageSrc: PathFinder,
     },
-    {
-      title: 'Pathfinder',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
-      link: 'https://rahulcool1910.github.io/pathfinding-visulaizer/',
-      imageSrc: codeEditor,
-    },
+    // {
+    //   title: 'Pathfinder',
+    //   description:
+    //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
+    //   link: 'https://rahulcool1910.github.io/pathfinding-visulaizer/',
+    //   imageSrc: CodeEditor,
+    // },
   ];
   return (
     <div className={styles.project_container}>
@@ -54,15 +55,14 @@ const Projects: React.FC = () => {
         {projectDetails.map((details, idx) => {
           return (
             <SwiperSlide className={styles.project_detail}>
-              <CodeEditor />
-              {/* <Image
-                src={details.imageSrc}
-                alt={''}
-                className={styles.project_detail_image}
-              /> */}
+              {React.createElement(details.imageSrc)}
               <div className={styles.project_detail_inner_container}>
                 <span className={styles.project_detail_tags}>{`<h2>`}</span>
-                <h2 className={styles.project_detail_title}>{details.title}</h2>
+                <h2 className={styles.project_detail_title}>
+                  <a href={details.link} target="_blank">
+                    {details.title}
+                  </a>
+                </h2>
                 <span className={styles.project_detail_description}>
                   {details.description}
                 </span>
@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
           <MdArrowBackIosNew />
         </div>
         <ProgressBar
-          completed={(projectProgress + 1) * 33.33}
+          completed={(projectProgress + 1) * (100 / projectDetails.length)}
           className={styles.project_details_progressbar}
           bgColor={'#02f74c'}
           baseBgColor={'#1d5d33'}

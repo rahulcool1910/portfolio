@@ -1,16 +1,17 @@
 @import '../../styles/variables.scss';
 
 .link {
-   &_container{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-   }
+  &_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:10px;
+  }
   &_sub_container {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
   }
   font-size: 1rem;
   color: $tertiary_grey;
@@ -90,4 +91,8 @@
     color: $primary_green;
     transition-delay: 0.2s;
   }
+}
+
+.logo {
+  width: 100px;
 }

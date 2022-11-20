@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './hero.module.scss';
 import Image from 'next/image';
-import path from '../../assets/path.svg';
+import path from '../../assets/path.png';
+
 const Hero: React.FC = () => {
   return (
     <div className={styles.hero_container}>
@@ -28,7 +29,9 @@ const Hero: React.FC = () => {
             <span className={styles.hero_text}>{`<Donwload CV/>`}</span>
           </h2>
         </div>
-        {/* <Image src={path} alt={''} className={styles.hero_path} /> */}
+        <div className={styles.path}>
+          <Image src={path} alt="" />
+        </div>
       </div>
     </div>
   );
