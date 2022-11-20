@@ -1,0 +1,100 @@
+@import '../../styles/variables.scss';
+
+.project {
+  &_container {
+    width: 100%;
+    height: calc(100vh - 200px);
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+  }
+  &_header {
+    // width:50%;
+    // position: relative;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    &_text {
+      color: $bg_white !important;
+      font-size: 3.5rem;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 4rem;
+      text-transform: capitalize;
+    }
+    & span {
+      color: $tertiary_grey;
+      &:first-child {
+        display: flex;
+        justify-content: start;
+        margin-left: -2rem;
+      }
+      &:last-child {
+        display: flex;
+        justify-content: end;
+        margin-right: -2rem;
+      }
+    }
+  }
+  &_details {
+    width: 90%;
+    // margin-top: 50px;
+    &_controller {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 100px;
+      &_button {
+        border: 1px solid $tertiary_grey;
+        border-radius: 100px;
+        padding: 1rem;
+        & svg {
+          font-size: 2rem;
+          fill: $tertiary_green;
+        }
+        // background-color: $primary_green;
+      }
+    }
+    &_progressbar {
+      width: 50%;
+    }
+  }
+  &_detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+
+    &_image {
+      border-radius: 100%;
+      // transform: scale(0.8);
+      height: 350px;
+      width: 350px;
+      // box-shadow: 0 0 0 3px white, 0 0 0 15px black, 0 0 0 17px #a8a8a8,
+      //   0 0 0 30px black, 0 0 0 31px #757575, 0 0 0 48px black,
+      //   0 0 0 49px #262626;
+    }
+    &_inner_container {
+      display: flex;
+      flex-direction: column;
+    }
+    &_tags {
+      color: $tertiary_grey;
+      padding: 10px;
+    }
+    &_title a {
+      color: $primary_green;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      padding-left: 2rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &_description {
+      padding-left: 2rem;
+    }
+  }
+}

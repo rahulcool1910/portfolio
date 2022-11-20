@@ -6,11 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.3",
+    "matter-js": "^0.18.0",
     "next": "latest",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "sass": "^1.56.1",
+    "swiper": "^8.4.4",
+    "two.js": "^0.8.10"
   },
   "devDependencies": {
+    "@types/matter-js": "^0.18.2",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
