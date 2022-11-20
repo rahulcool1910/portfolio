@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './hero.module.scss';
 import Image from 'next/image';
 import path from '../../assets/path.png';
+import DownloadCV from './DownloadCV';
 
 const Hero: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const Hero: React.FC = () => {
         </div>
         <div>
           <h2>
-            <span className={styles.hero_text}>{`<Donwload CV/>`}</span>
+            <DownloadCV />
           </h2>
         </div>
         <div className={styles.path}>
