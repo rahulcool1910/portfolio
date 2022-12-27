@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
     // },
   ];
   return (
-    <div className={styles.project_container}>
+    <div className={styles.project_container + ' ProjectContainer'}>
       <div className={styles.project_header}>
         <span>{`<h2>`}</span>
         <h2 className={styles.project_header_text}>My Portfolio</h2>

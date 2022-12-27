@@ -11,9 +11,11 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <div className={styles.container_subContainer}>
         <Navbar />
-        <Hero />
-        <Projects />
-        <ContactMe />
+        <div>
+          <Hero />
+          <Projects />
+          <ContactMe />
+        </div>
       </div>
     </div>
   );

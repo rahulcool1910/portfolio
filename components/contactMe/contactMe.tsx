@@ -27,7 +27,7 @@ const ContactMe = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className={styles.contact_container}>
+    <div className={styles.contact_container + ' ContactMeContainer'}>
       <div className={styles.contact_header}>
         <span>{`<h3>`}</span>
         <h2 className={styles.contact_header_text}>Connect with me</h2>
