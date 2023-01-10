@@ -1,12 +1,22 @@
 @import '../../styles/variables.scss';
 
 .link {
-  &_container {
+  &_main_container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 10px;
     height: 180px;
+    width: 90%;
+    position: fixed;
+  }
+  &_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    // display: none;
   }
   &_sub_container {
     display: flex;
@@ -29,7 +39,7 @@
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.09);
+
   &::before,
   &::after {
     content: '';
@@ -92,9 +102,163 @@
     color: $primary_green;
     transition-delay: 0.2s;
   }
+  &_hamburger {
+    display: none;
+    &_line {
+      width: 50px;
+      height: 5px;
+      background-color: #ecf0f1;
+      display: block;
+      margin: 8px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    & .is_active {
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &.is_active &_line:nth-child(2) {
+      width: 0px;
+    }
+
+    &.is_active &_line:nth-child(1),
+    &.is_active &_line:nth-child(3) {
+      -webkit-transition-delay: 0.3s;
+      -o-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+    }
+
+    &.is_active &_line:nth-child(1) {
+      -webkit-transform: translateY(13px) rotate(135deg);
+      -ms-transform: translateY(13px) rotate(135deg);
+      -o-transform: translateY(13px) rotate(135deg);
+      transform: translateY(13px) rotate(135deg);
+    }
+
+    &.is_active &_line:nth-child(3) {
+      -webkit-transform: translateY(-28px) rotate(225deg);
+      -ms-transform: translateY(-28px) rotate(225deg);
+      -o-transform: translateY(-28px) rotate(225deg);
+      transform: translateY(-28px) rotate(225deg);
+    }
+    &_circle {
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -80%);
+      transition: all 1s;
+    }
+  }
+  &_container_flex {
+    display: flex !important;
+  }
 }
 
 .logo {
   width: 100px;
   height: 100px;
+}
+.outer_logo {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .outer_logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    z-index: 100;
+  }
+  // TODO: refactor the code
+  .link_container_flex > .logo {
+    display: none;
+  }
+  .link_container_flex {
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+  .link_main_container{
+    width: 100%;
+  }
+  .link_main_container:has(.link_container_flex) {
+    // background-color: red;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  .link_container {
+    display: none;
+    z-index: 100;
+    // background-color: red;
+  }
+  .is_active ~ .link_container {
+    display: flex;
+  }
+  .link_hamburger {
+    display: grid;
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    &_line {
+      z-index: 101;
+    }
+  }
+  .link_hamburger.is_active > .link_hamburger_circle {
+    background-color: $tertiary_green;
+    animation: hamburger_circle_expansion 1s ease-in-out 0s;
+    width: 10000px;
+    height: 10000px;
+    z-index: 99;
+  }
+  .link_hamburger.is_active > .link_hamburger_circle_container {
+  }
+  .link:hover span {
+    color: $primary_black;
+    transition-delay: 0.2s;
+  }
+  .link::before,
+  .link::after {
+    background: $primary_black;
+  }
+  .link span::before,
+  .link span::after {
+    background: $primary_black;
+  }
+  .link {
+    width: fit-content;
+    & span {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@keyframes hamburger_circle_expansion {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 10000px;
+    height: 10000px;
+  }
 }
