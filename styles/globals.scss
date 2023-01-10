@@ -11,6 +11,8 @@ body {
   background-color: $primary_black;
   // font-family: 'Poor Story', cursive;
   font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  padding: 0;
 }
 *, *:after, *:before {
   -webkit-box-sizing: border-box;

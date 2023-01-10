@@ -18,15 +18,21 @@ const Projects: React.FC = () => {
   const projectDetails = [
     {
       title: 'Code Editor',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
+      descriptions: [
+        '• It is compatible with all browsers and includes features such as resizable windows, auto- completion, and code formatting.',
+        '• Javascript Packages can be downloaded di- rectly from the NPM repository and used without bundling at runtime.',
+        '• The code editor was built using React, Redux, Tailwind CSS, Immer, Prettier, and ESbuid.',
+      ],
       link: 'https://rahulcool1910.github.io/codeEditor/',
       imageSrc: CodeEditor,
     },
     {
       title: 'Pathfinder',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat quod tempora similique temporibus officiis officia ducimus asperiores ullam veritatis! Earum asperiores eum voluptatum soluta corporis odit dolor repudiandae eligendi.',
+      descriptions: [
+        '• Nuxt (Vue), Typescript, Tailwind CSS, and DaisyUI were used to build the application.',
+        '• My goal was to gain a better understanding of how real-time pathfinding algorithms work, so I built this visualizer.',
+        '• Implemented various algorithms, including A*, Dijkstra’s Theorem, DFS, and BFS.',
+      ],
       link: 'https://rahulcool1910.github.io/pathfinding-visulaizer/',
       imageSrc: PathFinder,
     },
@@ -63,9 +69,11 @@ const Projects: React.FC = () => {
                     {details.title}
                   </a>
                 </h2>
-                <span className={styles.project_detail_description}>
-                  {details.description}
-                </span>
+                <h2 className={styles.project_detail_description}>
+                  {details.descriptions.map((description) => {
+                    return <h1>{description}</h1>;
+                  })}
+                </h2>
                 <span className={styles.project_detail_tags}>{`</h2>`}</span>
               </div>
             </SwiperSlide>

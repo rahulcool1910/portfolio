@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             <DownloadCV />
           </h2>
         </div>
-        <div className={styles.path}>
+        <div className={styles.hero_path}>
           <img src="/path.png" alt="" />
         </div>
       </div>
