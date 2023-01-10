@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './hero.module.scss';
-import Image from 'next/image';
-import path from '../../assets/path.png';
 import DownloadCV from './DownloadCV';
 
 const Hero: React.FC = () => {
   return (
-    <div className={styles.hero_container}>
+    <div className={styles.hero_container + ' HeroContainer'}>
       <div className={styles.hero_inner_container}>
         <div className={styles.hero_intro}>
           <h2>
@@ -31,7 +29,7 @@ const Hero: React.FC = () => {
           </h2>
         </div>
         <div className={styles.path}>
-          <Image src={path} alt="" />
+          <img src="/path.png" alt="" />
         </div>
       </div>
     </div>

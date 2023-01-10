@@ -7,21 +7,31 @@ const Navbar: React.FC = () => {
   const links: ILinks[] = [
     {
       name: 'Home',
-      link: 'home',
+      link: 'HeroContainer',
     },
     {
       name: 'About Me',
-      link: 'home',
+      link: 'HeroContainer',
     },
     {
       name: 'Projects',
-      link: 'home',
+      link: 'ProjectContainer',
     },
     {
       name: 'Contact',
-      link: 'home',
+      link: 'ContactMeContainer',
     },
   ];
+
+  const scrollIntoView = (component: number) => {
+    const element = document.querySelector(`.${links[component].link}`);
+    if (!element) return;
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
+  };
 
   const getIndex = (num: number): String => {
     return `0${num + 1}`.slice(-2);
@@ -32,7 +42,10 @@ const Navbar: React.FC = () => {
         {links
           .filter((links, gIndex) => gIndex < 2)
           .map((links, currIdx) => (
-            <div className={styles.link}>
+            <div
+              className={styles.link}
+              onClick={() => scrollIntoView(currIdx)}
+            >
               <span>{`//${getIndex(currIdx)}.     <${links.name}/>`}</span>
             </div>
           ))}
@@ -42,7 +55,10 @@ const Navbar: React.FC = () => {
         {links
           .filter((links, gIndex) => gIndex >= 2)
           .map((links, currIdx) => (
-            <div className={styles.link}>
+            <div
+              className={styles.link}
+              onClick={() => scrollIntoView(currIdx + 2)}
+            >
               <span>{`//${getIndex(currIdx + 2)}.     <${links.name}/>`}</span>
             </div>
           ))}
