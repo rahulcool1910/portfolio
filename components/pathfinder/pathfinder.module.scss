@@ -88,3 +88,11 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 500px) {
+  .container {
+    width: 320px;
+    height: 320px;
+    min-width: 320px;
+  }
+}

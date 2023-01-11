@@ -3,7 +3,7 @@
 .contact {
   &_container {
     width: 100%;
-    height: calc(100vh - 200px);
+    // height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,17 +44,54 @@
     }
     width: 200px;
     height: 200px;
-   border: 1px solid $primary_green;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+    border: 1px solid $primary_green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 100%;
     position: absolute;
     cursor: pointer;
     transition: all 1s;
-    &:hover{
+    &:hover {
       transform: scale(1.2);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .contact {
+    &_header_text {
+      font-size: 2.5rem;
+    }
+    &_links {
+      position: initial;
+      &_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        height: auto;
+      }
+      &:first-child {
+        margin-left: 6rem;
+      }
+      &:nth-child(2) {
+        margin-right: 6rem;
+      }
+      &:nth-child(3) {
+        margin-left: 6rem;
+      }
+      &:last-child {
+        margin-right: 6rem;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .contact {
+    &_header_text {
+      font-size: 1.8rem;
     }
   }
 }

@@ -4,14 +4,9 @@ import styles from './contactMe.module.scss';
 const ContactMe = () => {
   const links = [
     {
-      name: 'Instagram',
+      name: 'Gmail',
       link: '',
       class: 'top-[25%] left-[20%] !h-[180px] !w-[180px]',
-    },
-    {
-      name: 'Twitter',
-      link: '',
-      class: 'top-[50%] left-[40%] !h-[150px] !w-[150px]',
     },
     {
       name: 'LinkedIn',
@@ -19,9 +14,14 @@ const ContactMe = () => {
       class: 'top-[10%] right-[25%] !h-[210px] !w-[210px]',
     },
     {
-      name: 'Gmail',
+      name: 'Instagram',
       link: '',
       class: 'top-[55%] right-[15%]',
+    },
+    {
+      name: 'Twitter',
+      link: '',
+      class: 'top-[50%] left-[40%] !h-[150px] !w-[150px]',
     },
   ];
   useEffect(() => {}, []);

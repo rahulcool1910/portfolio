@@ -51,7 +51,7 @@ $themeLenght: length($themeColours);
     height: 80%;
     background-color: #1c6d86;
     border-radius: 5px 5px 0px 0px;
-    :nth-child(n+2) {
+    :nth-child(n + 2) {
       background-color: #5867d5;
     }
   }
@@ -159,5 +159,12 @@ $themeLenght: length($themeColours);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 320px;
+    min-width: 320px;
   }
 }
